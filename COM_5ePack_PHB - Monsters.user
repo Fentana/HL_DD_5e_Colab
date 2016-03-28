@@ -12,7 +12,7 @@
     <fieldval field="rDEX" value="4"/>
     <fieldval field="rCON" value="8"/>
     <fieldval field="rINT" value="7"/>
-    <usesource source="5eMMCP" parent="UserParent" name="5e Monster Manual"/>
+    <usesource source="5eMMCP"/>
     <tag group="ProfSkill" tag="skPercep" name="Perception" abbrev="Perception"/>
     <tag group="RaceSize" tag="Large1"/>
     <tag group="ProductId" tag="Wizards"/>
@@ -114,7 +114,7 @@
     <fieldval field="rDEX" value="4"/>
     <fieldval field="rCON" value="4"/>
     <fieldval field="rINT" value="9"/>
-    <usesource source="5eMMCP" parent="UserParent" name="5e Monster Manual"/>
+    <usesource source="5eMMCP"/>
     <tag group="ProfSkill" tag="skPercep" name="Perception" abbrev="Perception"/>
     <tag group="RaceSize" tag="Large1"/>
     <tag group="ProductId" tag="Wizards"/>
@@ -225,7 +225,7 @@
     <fieldval field="rCON" value="4"/>
     <fieldval field="rINT" value="3"/>
     <fieldval field="rSTR" value="-2"/>
-    <usesource source="5eMMCP" parent="UserParent" name="5e Monster Manual"/>
+    <usesource source="5eMMCP"/>
     <tag group="RaceSize" tag="Medium0"/>
     <tag group="ProductId" tag="Wizards"/>
     <tag group="Alignment" tag="Lawful"/>
@@ -5215,7 +5215,7 @@ foreach pick in hero from BaseWep where "IsWeapon.wLongbow"
   <thing id="l5CAarakoc" name="Aarakocra" compset="Language" uniqueness="useronce">
     <tag group="LangCat" tag="Monster"/>
     <tag group="ProductId" tag="Wizards"/>
-    <tag group="LangPreval" tag="NPC" name="NPC Race Languages" abbrev="NPC"/>
+    <tag group="LangPreval" tag="Exotic"/>
     </thing>
   <thing id="ra5CMMDetL" name="Detect Life" description="The {abText} can magically sense the presence of living creatures up to 5 miles away. It knows the general direction they&apos;re in but not their exact locations." compset="RaceSpec">
     <tag group="Helper" tag="ShowSpec"/>
@@ -5341,9 +5341,10 @@ foreach pick in hero from BaseWep where "IsWeapon.wLongbow"
     <tag group="FeatureTyp" tag="Action"/>
     </thing>
   <thing id="ra5CDNParr" name="Parry" description="The {abText} adds {abValue} to its AC against one melee attack that would hit it. To do so, the {abText} must see the attacker and be wielding a melee weapon." compset="RaceSpec">
-    <tag group="FeatureTyp" tag="Reaction" name="Reaction" abbrev="Reaction"/>
+    <comment>For generic</comment>
     <tag group="Helper" tag="ShowSpec"/>
     <tag group="abAction" tag="Reaction"/>
+    <tag group="FeatureTyp" tag="Reaction" name="Reaction" abbrev="Reaction"/>
     <eval phase="Final" priority="20000"><![CDATA[Field[CustDesc].text = "The " & Field[abText].text & " adds " & Field[abValue].value & " to its AC against one melee attack that would hit it. To do so, the " & Field[abText].text & " must see the attacker and be wielding a melee weapon."]]></eval>
     </thing>
   <thing id="ra5CDKSpCa" name="Spellcasting" description="The death knight is a 19th-level spell caster. Its spellcas ting abil ity is Char isma (spell save DC 18, +10 to hit with spell attacks). It has the followin g paladin spells prepared:\n\n1st level (4 slots): command, compelled duel, searing smite\n2nd level (3 slots): hold person , magic weapon\n3rd level (3 slots) : dispel magic, elemental weapon\n4th level (3 slots): banishment, staggering smite\n5th level (2 slots): destructive wave (necrotic)" compset="RaceSpec">
@@ -5581,12 +5582,13 @@ Field[CustDesc].text = "The " & Field[abText].text & " targets one creature it c
     <fieldval field="gSizeCost" value="2"/>
     <fieldval field="wDieCount" value="1"/>
     <fieldval field="wDieSize" value="6"/>
-    <tag group="wProperty" tag="Reach" name="Reach" abbrev="Reach"/>
+    <usesource source="5eMMCP"/>
     <tag group="EquipType" tag="Metal" name="Metal" abbrev="Metal"/>
     <tag group="wCategory" tag="Melee" name="Melee Weapon" abbrev="Melee"/>
     <tag group="wProfReq" tag="Martial" name="Martial" abbrev="Martial"/>
     <tag group="wProperty" tag="Finesse" name="Finesse" abbrev="Finesse"/>
     <tag group="DamageType" tag="dtPiercing"/>
+    <tag group="wProperty" tag="Reach" name="Reach" abbrev="Reach"/>
     </thing>
   <thing id="w5CStaff" name="Staff" compset="Weapon">
     <fieldval field="gWeight" value="4"/>
@@ -5595,11 +5597,12 @@ Field[CustDesc].text = "The " & Field[abText].text & " targets one creature it c
     <fieldval field="wDieSize" value="6"/>
     <fieldval field="wDCntVers" value="1"/>
     <fieldval field="wDSizVers" value="8"/>
-    <tag group="EquipType" tag="Wood" name="Wood" abbrev="Wood"/>
+    <usesource source="5eMMCP"/>
     <tag group="wCategory" tag="Melee" name="Melee Weapon" abbrev="Melee"/>
     <tag group="wProfReq" tag="Simple" name="Simple" abbrev="Simple"/>
     <tag group="wProperty" tag="Versatile" name="Versatile" abbrev="Versatile"/>
     <tag group="DamageType" tag="dtBludgeon" name="Bludgeoning" abbrev="Bludgeoning"/>
+    <tag group="EquipType" tag="Wood" name="Wood" abbrev="Wood"/>
     </thing>
   <thing id="ra5CScCFAp" name="False Appearance" description="While the scarecrow remains motionless, it is indistinguishable from an ordinary, inanimate scarecrow." compset="RaceSpec">
     <tag group="FeatureTyp" tag="Special" name="Special" abbrev="Special"/>
@@ -6314,10 +6317,11 @@ Field[CustDesc].text = "The " & Field[abText].text & " targets one creature it c
     <fieldval field="gSizeCost" value="5"/>
     <fieldval field="wDieCount" value="1"/>
     <fieldval field="wDieSize" value="6"/>
-    <tag group="DamageType" tag="dtBludgeon" name="Bludgeoning" abbrev="Bludgeoning"/>
+    <usesource source="5eMMCP"/>
     <tag group="EquipType" tag="Wood"/>
     <tag group="wCategory" tag="Melee" name="Melee Weapon" abbrev="Melee"/>
     <tag group="wProfReq" tag="Simple" name="Simple" abbrev="Simple"/>
+    <tag group="DamageType" tag="dtBludgeon" name="Bludgeoning" abbrev="Bludgeoning"/>
     </thing>
   <thing id="w5CPincSta" name="Pincer Staff" compset="Weapon">
     <fieldval field="gWeight" value="4"/>
@@ -6328,10 +6332,11 @@ Field[CustDesc].text = "The " & Field[abText].text & " targets one creature it c
     <fieldval field="wDSizVers" value="8"/>
     <fieldval field="wAttackEff" value="If the target is a Medium or smaller creature, it is grappled (escape DC 14). Until this grapple ends, the kuo-toa can&apos;t use its pincer staff on  another target."/>
     <fieldval field="wReach" value="10"/>
-    <tag group="wCategory" tag="Melee" name="Melee Weapon" abbrev="Melee"/>
+    <usesource source="5eMMCP"/>
     <tag group="DamageType" tag="dtPiercing"/>
     <tag group="RaceEquip" tag="r5CMMKuoTW"/>
     <tag group="wProfReq" tag="Simple" name="Simple" abbrev="Simple"/>
+    <tag group="wCategory" tag="Melee" name="Melee Weapon" abbrev="Melee"/>
     </thing>
   <thing id="ra5CRotGaz" name="Rotting Gaze" description="The {abText} targets one creature it can see within 30 feet of it. The target must succeed on a DC {abDC} Constitution saving throw against this magic or take 10 (3d6) necrotic damage." compset="RaceSpec">
     <tag group="Helper" tag="ShowSpec"/>
@@ -6464,7 +6469,7 @@ Field[CustDesc].text = "The " & Field[abText].text & " targets one creature it c
     <fieldval field="wDieSize" value="6"/>
     <fieldval field="wAttackEff" value="This is a magic weapon attack. On a critical hit against a target in an astra l body (as with the astral projection spell), the githyanki can cut the silvery cord that tethers the target to its material body, instead of  dealing damage."/>
     <fieldval field="wAttBonus" value="3"/>
-    <tag group="wProperty" tag="TwoHanded" name="Two-Handed" abbrev="Two-Handed"/>
+    <usesource source="5eMMCP"/>
     <tag group="DamageType" tag="dtSlashing" name="Slashing" abbrev="Slashing"/>
     <tag group="EquipType" tag="Metal" name="Metal" abbrev="Metal"/>
     <tag group="wCategory" tag="Melee" name="Melee Weapon" abbrev="Melee"/>
@@ -6472,6 +6477,7 @@ Field[CustDesc].text = "The " & Field[abText].text & " targets one creature it c
     <tag group="RaceEquip" tag="r5CMMGithK"/>
     <tag group="wProfReq" tag="Martial" name="Martial" abbrev="Martial"/>
     <tag group="wProperty" tag="Heavy" name="Heavy" abbrev="Heavy"/>
+    <tag group="wProperty" tag="TwoHanded" name="Two-Handed" abbrev="Two-Handed"/>
     </thing>
   <thing id="ra5CGZInSp" name="Innate Spellcasting (Psionics)" description="The githzerai&apos;s spellcasting ability is Wisdom (spell save DC 14, +6 to hit with spell attacks). It can innately cast the following spells , requiring no\ncomponents:\n\nAt will: {i}mage hand{/i} (the hand is invisible)\n3/day each: {i}feather fall{/i}, {i}jump{/i}, {i}see invisibility{/i}, {i}shield{/i}\n1/day each: {i}phantasmal killer{/i}, {i}plane shift{/i}" compset="RaceSpec">
     <tag group="FeatureTyp" tag="Special" name="Special" abbrev="Special"/>
@@ -7565,5 +7571,8 @@ double = field[abValue].value*2
   <thing id="ra5COGSpCa" name="Spellcasting" description="The ore is a 3rd-level spellcaster. Its spellcasting ability is Wisdom (spell save DC 11, +3 to hit with spell attacks). The orc has the following cleric spells prepared:\n\nCantrips (at-will): guidance, resistance, thaumaturgy\n1st level (4 slots): bless, command\n2nd level (2 slots): augury, spiritual weapon (spear)" compset="RaceSpec">
     <tag group="FeatureTyp" tag="Special"/>
     <tag group="Helper" tag="ShowSpec"/>
+    </thing>
+  <thing id="tt5CHalfOr" name="Half-Orc" compset="TypeTag" uniqueness="unique">
+    <tag group="NeedType" tag="tpHumanoid"/>
     </thing>
   </document>
